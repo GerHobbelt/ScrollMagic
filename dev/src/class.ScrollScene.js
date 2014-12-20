@@ -1236,6 +1236,14 @@
 						"box-sizing": "content-box"
 					});
 
+			// add actual offset of absolutely centered elements
+			if (!inFlow) {
+				spacer.css({
+					"top" : _pin.offset().top,
+					"left" :_pin.offset().left
+				});
+			}
+
 			// set the pin Options
 			var pinInlineCSS = _pin[0].style;
 			_pinOptions = {
