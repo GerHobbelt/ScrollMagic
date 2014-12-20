@@ -1,5 +1,5 @@
 /*
-ScrollMagic v1.3.0
+ScrollMagic v1.3.1
 The jQuery plugin for doing magical scroll interactions.
 (c) 2014 Jan Paepke (@janpaepke)
 License & Info: http://janpaepke.github.io/ScrollMagic
@@ -12,7 +12,7 @@ Greensock License info at http://www.greensock.com/licensing/
 */
 /**
 @overview	##Info
-@version	1.3.0
+@version	1.3.1
 @license	Dual licensed under MIT license and GPL.
 @author		Jan Paepke - e-mail@janpaepke.de
 
@@ -624,7 +624,7 @@ Greensock License info at http://www.greensock.com/licensing/
 		construct();
 		return ScrollMagic;
 	};
-	ScrollMagic.version = "1.3.0"; // version number for browser global
+	ScrollMagic.version = "1.3.1"; // version number for browser global
 
 	/**
 	 * A ScrollScene defines where the controller should react and how.
@@ -1858,6 +1858,14 @@ Greensock License info at http://www.greensock.com/licensing/
 						"box-sizing": "content-box"
 					});
 
+			// add actual offset of absolutely centered elements
+			if (!inFlow) {
+				spacer.css({
+					"top" : _pin.offset().top,
+					"left" :_pin.offset().left
+				});
+			}
+
 			// set the pin Options
 			var pinInlineCSS = _pin[0].style;
 			_pinOptions = {
@@ -2382,6 +2390,7 @@ Greensock License info at http://www.greensock.com/licensing/
 		construct();
 		return ScrollScene;
 	};
+
 
 	/*
 	 * ----------------------------------------------------------------
