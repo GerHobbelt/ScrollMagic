@@ -13,7 +13,10 @@
 			"homepage": "http://www.janpaepke.de"
 		}
 	],
-	"main": "scrollmagic/uncompressed/ScrollMagic.js",
+	"main": [
+		"scrollmagic/uncompressed/ScrollMagic.js",
+		"scrollmagic/uncompressed/plugins/animation.gsap.js"
+	],
 	"keywords": [
 		"scroll",
 		"scrolling",
